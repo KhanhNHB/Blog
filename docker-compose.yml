@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: blog_mysql
+    volumes:
+      - db_mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: blogger
+      MYSQL_PASSWORD: blogger
+      MYSQL_DATABASE: blog
+    ports:
+      - 3306:3306
+
+volumes:
+  db_mysql:
